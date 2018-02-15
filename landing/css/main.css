@@ -71,3 +71,7 @@ body{
   size: 14px;
   margin-right: 8px;
 }
+
+.second-action {
+  min-height: 200px;
+}

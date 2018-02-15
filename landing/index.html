@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Jumbotron Template for Bootstrap</title>
+    <title>Feedback by Wevolver</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -15,6 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link href="./css/main.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -41,12 +42,14 @@
               <br><span class="oi oi-check list-check" title="check" aria-hidden="true"></span> No account necessary
             </p>
             <p>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="email">
-                <span class="input-group-btn">
-                  <button class="btn btn-secondary action" type="button">KEEP ME UPDATED!</button>
-                </span>
-              </div>
+              <form onsubmit="submitform()">
+                <div class="input-group">
+                  <input type="email" class="form-control" name="email" required placeholder="email...">
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn btn-secondary action">KEEP ME UPDATED!</button>
+                  </span>
+                </div>
+              </form>
             </p>
           </div>
           <div class="col-md-7">
@@ -76,6 +79,23 @@
         </div>
       </div>
     </div> <!-- /container -->
+
+    <div class="container">
+       <div class="row text-center second-action">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+        <p>Stay up to date on the development of Feedback by Wevolver</p>
+        <form onsubmit="submitform()">
+          <div class="input-group">
+            <input type="email" class="form-control" name="email" required placeholder="email...">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-secondary action">KEEP ME UPDATED!</button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
      <div class="container text-center">
       <footer>
         <p style="color: #ccc">&copy; Wevolver 2018</p>
@@ -84,7 +104,30 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+      function submitform(e, f){
+          if (event.target.email.value == "" || event.target.email.value == null) {
+            return
+          }
+          var formData = {
+              'email': event.target.email.value
+          };
+
+          $.ajax({
+            type: "POST",
+            url: "https://fmy2tnm9mg.execute-api.us-west-1.amazonaws.com/api/mailing/",
+        data: JSON.stringify(formData),
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json'
+          }).done(function(data) {
+              console.log(data);
+          });
+
+          $("#email").val("");
+          event.preventDefault();;
+        }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="./js/bootstrap.min.js"></script>
   </body>
