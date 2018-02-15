@@ -5,6 +5,10 @@ body{
   -webkit-font-smoothing: antialiased;
 }
 
+p {
+  font-weight: 100;
+}
+
 .navbar {
   border-bottom: 1px solid #ddd;
   height: 48px;
