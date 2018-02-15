@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,700|Open+Sans:300,400,700');
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.navbar {
+  border-bottom: 1px solid #ddd;
+  height: 48px;
+}
+
+.wevolver-brand {
+  font-family: 'Dosis', sans-serif;
+  font-size: 19.2px;
+  text-transform: uppercase;
+  line-height: 16px;
+  color: #ccc;
+}
+
+.jumbotron {
+  /*background: #f2f4f5;*/
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.jumbotron .hero {
+    min-height: 550px;
+}
+
+.jumbotron h1{
+  font-size: 48px;
+}
+
+.subheader{
+  padding: 16px 0;
+  font-size: 21px;
+  font-weight: 100;
+}
+
+.jumbotron .mockup {
+  width: 100%;
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.btn.action {
+  background: #EEB111;
+  color: white;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  border-radius: 0;
+}
+
+.features-icon {
+  font-size: 72px;
+  padding-bottom: 24px;
+  color: #00BBE3;
+}
+
+.container.features {
+  min-height: 500px;
+  align-items: center;
+  display: flex;
+}
+
+.list-check {
+  color: #00BBE3;
+  size: 14px;
+  margin-right: 8px;
+}
